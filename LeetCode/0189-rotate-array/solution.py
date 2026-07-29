@@ -4,20 +4,6 @@ class Solution:
         Do not return anything, modify nums in-place instead.
         """
         n=len(nums)
-        k=k%n
-        arr=[]
-        for i in range(n-k,n):
-            arr.append(nums[i])
-        for i in range(n-k):
-            arr.append(nums[i])
-        for i in range(n):
-            nums[i]=arr[i]
-        
-        
-        
-
-        
-
-            
-
-        
+        if k>n:
+            k=k%n
+        nums[:]=nums[n-k:n]+nums[0:n-k]
