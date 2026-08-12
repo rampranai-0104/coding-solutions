@@ -1,0 +1,19 @@
+class Solution:
+    def isIsomorphic(self, s: str, t: str) -> bool:
+        n=len(s)
+        m=len(t)
+        m1={}
+        m2={}
+        if n!=m:
+            return False
+        for i in range(n):
+            a=s[i]
+            b=t[i]
+            if a in m1 and m1[a]!=b:
+                return False
+            if b in m2 and m2[b]!=a:
+                return False
+            m1[a]=b
+            m2[b]=a
+        return True
+
